@@ -8,19 +8,24 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        CarTest();
+
+
+
+
+
+    }
+
+    private static void CarTest()
+    {
         CarManager carManager = new CarManager(new EfCarDal());
-        
-        foreach (var cars in carManager.GetCarsByBrandId(1))
+
+        foreach (var brandid in carManager.GetCarsByBrandId(1)) 
         {
-            Console.WriteLine(cars.CarName);
+            Console.WriteLine(brandid.CarName + " " + brandid.BrandId);
         }
 
-        //carManager.Add(new Car
-        //{
-        //    CarName = "E",
-        //    Id = 2,
-        //    DailyPrice = 0,
-        //}) ;
+
 
     }
 }
