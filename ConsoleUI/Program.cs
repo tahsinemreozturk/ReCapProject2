@@ -10,20 +10,28 @@ internal class Program
     {
         CarTest();
 
-
-
-
-
     }
 
     private static void CarTest()
     {
         CarManager carManager = new CarManager(new EfCarDal());
+        
+        var result = carManager.GetCarsByBrandId(1);
 
-        foreach (var brandid in carManager.GetCarsByBrandId(1)) 
+        if (result.Success==true)
         {
-            Console.WriteLine(brandid.CarName + " " + brandid.BrandId);
+            foreach (var brandid in result.Data)
+            {
+                Console.WriteLine(brandid.CarName + " " + brandid.BrandId);
+            }  
+            
         }
+        else
+        {
+            Console.WriteLine(result.Message);
+        }
+
+         
 
 
 
