@@ -9,19 +9,19 @@ namespace Core.Utilities.Results
     public class Result : IResult
     {
         
-        //this: this bu class demektir. bu classtaki tek parametreli ctor`u da iki
+        //this: this bu class demektir. bu classtaki tek parametreli ctor`u da 
         //iki parametreli ctor ile birlikte calistirdik
-        public Result(bool success, string message):this(success)
+        public Result(bool success, string message):this(success)   
         {
             Message = message;
         }
         public Result(bool success)
         {
-                Success = success;
+            Success = success;
         }
 
         public bool Success { get; }
-        //get = readonlydir. Constructorda set edilebilirler.
+        //get = read onlydir. Constructorda set edilebilirler.
         public string Message { get; }
     }
 }
