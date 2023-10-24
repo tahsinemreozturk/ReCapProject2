@@ -19,6 +19,11 @@ builder.Services.AddScoped<IColorService, ColorManager>();
 builder.Services.AddScoped<IColorDal, EfColorDal>();
 builder.Services.AddScoped<ICustomerService, CustomerManager>();
 builder.Services.AddScoped<ICustomerDal, EfCustomerDal>();
+builder.Services.AddScoped<IRentalService, RentalManager>();
+builder.Services.AddScoped<IRentalDal, EfRentalDal>();
+builder.Services.AddScoped<IUserService, UserManager>();
+builder.Services.AddScoped<IUserDal, EfUserDal>();
+
 
 var app = builder.Build();
 
