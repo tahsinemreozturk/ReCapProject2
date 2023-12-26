@@ -16,8 +16,6 @@ namespace Web_API.Controllers
             _rentalService = rentalService;
         }
 
-
-
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
