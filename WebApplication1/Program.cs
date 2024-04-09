@@ -3,6 +3,7 @@ using Autofac.Extensions.DependencyInjection;
 using Business.Abstract;
 using Business.Concrete;
 using Business.DependencyResolvers.Autofac;
+using Core.Utilities.Helpers.FileHelper;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 
@@ -31,6 +32,8 @@ builder.Services.AddScoped<IRentalService, RentalManager>();
 builder.Services.AddScoped<IRentalDal, EfRentalDal>();
 builder.Services.AddScoped<IUserService, UserManager>();
 builder.Services.AddScoped<IUserDal, EfUserDal>();
+builder.Services.AddScoped<IFileHelper, FileHelperManager>();
+builder.Services.AddScoped<ICarImageService, CarImageManager>();
 
 
 var app = builder.Build();
@@ -41,6 +44,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 

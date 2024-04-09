@@ -43,5 +43,11 @@ namespace Business.Constants
         public static string RentalDeleted = "Kirlama Silindi";
         public static string RentalUpdate = "Kiralama Güncellendi";
         public static string RentalListed = "Kiralama renkler getirildi";
+
+        public static string CarImageAdded = "Araç resmi eklendi.";
+        public static string CarImageDeleted = "Araç resmi Silindi";
+        public static string CarImageUpdated = "Araç resmi güncellendi.";
+        public static string Max5Image = "Bir aracın en fazla 5 fotoğrafı olabilir.";
+
     }
 }
