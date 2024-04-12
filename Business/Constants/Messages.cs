@@ -49,5 +49,15 @@ namespace Business.Constants
         public static string CarImageUpdated = "Araç resmi güncellendi.";
         public static string Max5Image = "Bir aracın en fazla 5 fotoğrafı olabilir.";
 
+        public static string AccessTokenCreated = "Erişim tokeni oluşturuldu";
+        public static string AuthorizationDenied = "Yetki reddedildi.";
+        public static string UserAlreadyExists = "Bu kullanıcı zaten var";
+        public static string UserRegistered = "Kullanıcı kaydedildi";
+        public static string MaintenanceTime = "Sistem bakimda";
+        public static string PasswordError = "Hatalı Şifre";
+        public static string SuccessfulLogin = "Giriş Başarılı";
+        public static string UserNotFound = "Kullanıcı bulunamadı";
+
+
     }
 }
