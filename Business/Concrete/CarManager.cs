@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
@@ -30,6 +31,7 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
+        [SecuredOperation("admin")]
         [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {
@@ -40,12 +42,18 @@ namespace Business.Concrete
             //}
 
             //ValidationTool.Validate(new CarValidator(),car); burayı attiributte ile hallettik.
-                
-            _carDal.Add(car);
-            
-
-            return new ErrorResult(Constants.Messages.CarNoAdded);
-            
+            try
+            {
+                _carDal.Add(car);
+                return new SuccessResult(Constants.Messages.CarAdded);
+            }
+            catch (Exception ex)
+            {
+                // Hata durumunda
+                // Loglama yapılır
+                return new ErrorResult(Constants.Messages.CarNoAdded);
+            }
+          
         }
 
         public IResult Delete(Car car)

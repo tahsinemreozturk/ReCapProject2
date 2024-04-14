@@ -43,5 +43,6 @@ namespace Business.BusinessAspects.Autofac
             //yetkisi yoksa hata ver.
             throw new Exception(Messages.AuthorizationDenied);
         }
+
     }
 }

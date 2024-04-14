@@ -1,7 +1,10 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
 
 namespace WebApplication1.Controllers
 {
@@ -23,7 +26,7 @@ namespace WebApplication1.Controllers
             {
                 return Ok(result);
             }
-            return BadRequest();
+            return BadRequest(result);
         }
 
         [HttpGet("GetCarsByBrandId")]
@@ -34,7 +37,7 @@ namespace WebApplication1.Controllers
             {
                 return Ok(result);
             }
-            return BadRequest();
+            return BadRequest(result);
         }
 
         [HttpGet("GetCarDetails")]
@@ -45,7 +48,7 @@ namespace WebApplication1.Controllers
             {
                 return Ok(result);
             }
-            return BadRequest();
+            return BadRequest(result);
         }
 
         [HttpGet("GetCarsByColorId")]
@@ -56,7 +59,7 @@ namespace WebApplication1.Controllers
             {
                 return Ok(result);
             }
-            return BadRequest();
+            return BadRequest(result);
         }
 
         [HttpGet("GetById")]
@@ -67,7 +70,7 @@ namespace WebApplication1.Controllers
             {
                 return Ok(result);
             }
-            return BadRequest();
+            return BadRequest(result);
         }
 
         [HttpPost("Add")]
@@ -76,9 +79,10 @@ namespace WebApplication1.Controllers
             var result = _carService.Add(car);
             if (result.Success)
             {
-                return Ok();
+                return Ok(result);
+            
             }
-            return BadRequest();
+            return BadRequest(result);
         }
         [HttpPost("Delete")]
         public IActionResult Delete(Car car)
@@ -86,9 +90,9 @@ namespace WebApplication1.Controllers
             var result = _carService.Delete(car);
             if (result.Success)
             {
-                return Ok();
+                return Ok(result);
             }
-            return BadRequest();
+            return BadRequest(result);
         }
 
         [HttpPost("Update")]
@@ -97,9 +101,9 @@ namespace WebApplication1.Controllers
             var result = _carService.Update(car);
             if (result.Success)
             {
-                return Ok();
+                return Ok(result);
             }
-            return BadRequest();
+            return BadRequest(result);
         }
 
 
