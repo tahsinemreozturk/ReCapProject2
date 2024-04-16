@@ -21,6 +21,7 @@ namespace WebApplication1.Controllers
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
+            Thread.Sleep(500);
             var result = _carService.GetAll();
             if (result.Success)
             {
@@ -32,6 +33,7 @@ namespace WebApplication1.Controllers
         [HttpGet("GetCarsByBrandId")]
         public IActionResult GetCarsByBrandId(int id)
         {
+            Thread.Sleep(500);
             var result = _carService.GetCarsByBrandId(id);
             if (result.Success)
             {
@@ -68,7 +70,7 @@ namespace WebApplication1.Controllers
             var result = _carService.GetById(id);
             if (result.Success)
             {
-                return Ok(result);
+                return Ok(result.Data);
             }
             return BadRequest(result);
         }

@@ -66,7 +66,7 @@ namespace Web_API.Controllers
             {
                 return Ok(result);
             }
-            return Ok(result);
+            return BadRequest(result);
         }
         [HttpGet("getbyimageid")]
         public IActionResult GetByImageId(int imageId)

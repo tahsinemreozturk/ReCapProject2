@@ -18,10 +18,10 @@ namespace DataAccess.Concrete.InMemory
         {
             _cars = new List<Car>
             {
-                new Car { Id = 1, BrandId = 1, ColorId = 1, DailyPrice = 600, ModelYear = 2018, Description = " Fiat Doblo " },
-                new Car { Id = 2, BrandId = 1, ColorId = 2, DailyPrice = 1600, ModelYear = 2020, Description = " Fiat Egea " },
-                new Car { Id = 3, BrandId = 2, ColorId = 1, DailyPrice = 15500, ModelYear = 2021, Description = " Mercedes EQ " },
-                new Car { Id = 4, BrandId = 1, ColorId = 3, DailyPrice = 900, ModelYear = 2019, Description = " Fiat Linea " },
+                new Car { CarId = 1, BrandId = 1, ColorId = 1, DailyPrice = 600, ModelYear = 2018, Description = " Fiat Doblo " },
+                new Car { CarId = 2, BrandId = 1, ColorId = 2, DailyPrice = 1600, ModelYear = 2020, Description = " Fiat Egea " },
+                new Car { CarId = 3, BrandId = 2, ColorId = 1, DailyPrice = 15500, ModelYear = 2021, Description = " Mercedes EQ " },
+                new Car { CarId = 4, BrandId = 1, ColorId = 3, DailyPrice = 900, ModelYear = 2019, Description = " Fiat Linea " },
             };
 
 
@@ -32,9 +32,9 @@ namespace DataAccess.Concrete.InMemory
             _cars.Add(car);
         }
 
-        public void Delete(int id)
+        public void Delete(int CarId)
         {
-            Car carsToDelete = _cars.SingleOrDefault(c => c.Id == c.Id);
+            Car carsToDelete = _cars.SingleOrDefault(c => c.CarId == c.CarId);
             _cars.Remove(carsToDelete);
         }
 
@@ -58,9 +58,9 @@ namespace DataAccess.Concrete.InMemory
             throw new NotImplementedException();
         }
 
-        public Car GetById(int id)
+        public Car GetById(int CarId)
         {
-            Car carsId = _cars.SingleOrDefault(c => c.Id == c.Id);
+            Car carsId = _cars.SingleOrDefault(c => c.CarId == c.CarId);
             return carsId;
         }
 
@@ -71,7 +71,7 @@ namespace DataAccess.Concrete.InMemory
 
         public void Update(Car car)
         {
-            Car carsToUpdate = _cars.SingleOrDefault(c => c.Id == c.Id);
+            Car carsToUpdate = _cars.SingleOrDefault(c => c.CarId == c.CarId);
             carsToUpdate.DailyPrice = car.DailyPrice;
             carsToUpdate.Description = car.Description;
         }
