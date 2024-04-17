@@ -67,7 +67,7 @@ namespace WebApplication1.Controllers
         [HttpGet("GetById")]
         public IActionResult GetById(int id)
         {
-            var result = _carService.GetById(id);
+            var result = _carService.GetCarDetailByCarId(id);
             if (result.Success)
             {
                 return Ok(result.Data);
