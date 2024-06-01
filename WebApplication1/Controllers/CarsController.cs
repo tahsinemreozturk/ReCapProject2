@@ -64,13 +64,24 @@ namespace WebApplication1.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("GetById")]
-        public IActionResult GetById(int id)
+        [HttpGet("GetCarDetailByColorAndBrandId")]
+        public IActionResult GetCarDetailByColorAndBrandId(int brandId, int colorId) 
         {
-            var result = _carService.GetCarDetailByCarId(id);
+            var result = _carService.GetCarDetailByColorAndBrandId(brandId, colorId);
+            if (result.Success) 
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("GetCarDetailByCarId")]
+        public IActionResult GetCarDetailByCarId(int carId)
+        {
+            var result = _carService.GetCarDetailByCarId(carId);
             if (result.Success)
             {
-                return Ok(result.Data);
+                return Ok(result);
             }
             return BadRequest(result);
         }

@@ -14,7 +14,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-8U30TCM;Database=RentACar;Trusted_Connection=true;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer(@"Server=EMRE;Database=RentACar;Trusted_Connection=true;TrustServerCertificate=True");
         }
 
 
@@ -28,9 +28,6 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Rental> Rentals { get; set; } 
         public DbSet<CarImage> CarImages { get; set; }
         public DbSet<Payment> Payments { get; set; }
-
-
-
 
 
 
